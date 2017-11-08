@@ -7,7 +7,7 @@
  * Baseado nos slides 90 da aula do dia 25/08/2017 
  * Cálculo de Polinômio - Exemplo 2
  *
- * Dada uma sequêencia de núumeros reais an, an−1, . . . , a1, a0, e um 
+ * Dada uma sequência de núumeros reais an, an−1, . . . , a1, a0, e um 
  * número real x, calcular o valor do polinômio 
  *   Pn(x) = a(n)x^(n) + a(n−1)x^(n−1) + . . . + a1x + a0.
  */
