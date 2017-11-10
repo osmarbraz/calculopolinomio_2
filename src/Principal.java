@@ -11,6 +11,10 @@
  * número real x, calcular o valor do polinômio 
  *   Pn(x) = a(n)x^(n) + a(n−1)x^(n−1) + . . . + a1x + a0.
  */
+
+/**
+ * @author Osmar de Oliveira Braz Junior
+ */
 public class Principal {
 
     /**
