@@ -4,12 +4,20 @@
  * Programa de Pós-Graduação em Ciências da Computação - PROPG
  * Disciplinas: Projeto e Análise de Algoritmos
  * Prof Alexandre Gonçalves da Silva 
+ *
  * Baseado nos slides 90 da aula do dia 25/08/2017 
+ *
  * Cálculo de Polinômio - Exemplo 2
  *
  * Dada uma sequência de núumeros reais an, an−1, . . . , a1, a0, e um 
  * número real x, calcular o valor do polinômio 
  *   Pn(x) = a(n)x^(n) + a(n−1)x^(n−1) + . . . + a1x + a0.
+ *
+ * Atenção:
+ * Vetor em java inicia em 0, os algoritmos consideram início em 1.
+ * A subtraçào de -1 ocorre somente no local de acesso ao vetor ou matriz 
+ * para manter a compatibilidade entre os algoritmos.
+ * 
  */
 
 /**
@@ -38,7 +46,7 @@ public class Principal {
         // Quando restar apenas o último coeficiente, 
         // APENAS RETORNA (não é necessário multiplicar - grau de x = 0)
         if (n == 1) {
-            retorno[0] = A[0]; //P0x
+            retorno[0] = A[1-1]; //P0x
             retorno[1] = 1;    //xn
             return retorno;
         } else {
@@ -49,8 +57,8 @@ public class Principal {
 
             // n termos, grau do polinômio n-1
             // Meio de eliminar o elemento de grau n-1
-            for (int i = 0; i < ALinha.length; i++) {
-                ALinha[i] = A[i + 1];
+            for (int i = 1; i <= ALinha.length; i++) {
+                ALinha[i-1] = A[i + 1 - 1];
             }
 
             retorno = calcularPolinomio(ALinha, x);
@@ -60,8 +68,9 @@ public class Principal {
 
             xn = x * xLinha;
 
-            // A[0] = a de grau n
-            Pnx = PLinha + A[0] * xn;
+            // A[1] = a de grau n
+            System.out.println("A[n]=" + A[1-1] + " xn=" + xn);
+            Pnx = PLinha + A[1-1] * xn;
         }
 
         retorno[0] = Pnx;
@@ -78,7 +87,6 @@ public class Principal {
         // 2 * x^ + 3 * x + 1 * x
 
         System.out.println(">>> Cálculo de Polinômio - Exemplo 2 <<<");
-
         
         float[] P = calcularPolinomio(A, x);
 
